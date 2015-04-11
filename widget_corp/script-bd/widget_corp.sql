@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 10/04/2015 às 23h12min
+-- Tempo de Geração: 11/04/2015 às 20h21min
 -- Versão do Servidor: 5.5.35
 -- Versão do PHP: 5.5.11-2+deb.sury.org~precise+2
 
@@ -48,14 +48,19 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `content` text,
   PRIMARY KEY (`id`),
   KEY `subject_id` (`subject_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `pages`
 --
 
 INSERT INTO `pages` (`id`, `subject_id`, `menu_name`, `position`, `visible`, `content`) VALUES
-(1, 1, 'teste de pagina', 1, 1, 'teste de pagina teste de pagina');
+(2, 2, 'Our misssion', 1, 1, 'Our mission text'),
+(3, 2, 'Our History', 2, 1, 'Our History text'),
+(4, 3, 'Large Widgets', 1, 1, 'Large Widgets content'),
+(5, 3, 'Small Widgets', 2, 1, 'Small Widgets content'),
+(6, 4, 'Retrofitting', 1, 1, 'Retrofitting content'),
+(7, 4, 'Certification', 2, 1, 'Certification content');
 
 -- --------------------------------------------------------
 
@@ -69,14 +74,17 @@ CREATE TABLE IF NOT EXISTS `subjects` (
   `position` int(3) NOT NULL,
   `visible` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `subjects`
 --
 
 INSERT INTO `subjects` (`id`, `menu_name`, `position`, `visible`) VALUES
-(1, 'teste da silva', 1, 1);
+(2, 'About Widget Corp', 1, 1),
+(3, 'Products', 2, 1),
+(4, 'Services', 3, 1),
+(5, 'Today''s Widget Trivia', 4, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
