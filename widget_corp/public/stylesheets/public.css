@@ -68,4 +68,10 @@ background: #EEE4B9;
 #page h2 { color: #8D0D19; margin-top: 1em;}
 #page h3 { color: #8D0D19}
 
+div.message{
+	border: 2px solid #8D0D19;
+	color: #8D0D19; font-weight: bold;
+	margin: 1em 0; padding: 1em;
+}
+
 
