@@ -1,4 +1,4 @@
-.metadata/
+.metadata/*
 .buildpath
 .project
-.settings/
+.settings/*
