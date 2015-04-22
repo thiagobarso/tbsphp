@@ -1,4 +1,22 @@
-.metadata/*
-.buildpath
+ 
+######################
+# Eclipse
+######################
+ 
+*.pydevproject
 .project
-.settings/*
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+/src/main/resources/rebel.xml
+# External tool builders
+.externalToolBuilders/
