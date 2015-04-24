@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 		// be sure to escape the content
 		$content = mysql_prep($_POST["content"]);
 		
-		$query = "INSERTO INTO pages (";
+		$query = "INSERT INTO pages (";
 		$query .= " subject_id, menu_name, position, visible, content";
 		$query .= ") VALUES (";
 		$query .= " {$subject_id},'{$menu_name}', {$position}, {$visible}, '{$content}'";
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
 		if($result){
 			// Sucess
 			$_SESSION["message"] = "Page created.";
-			redirect_to("manage_conten.php?subject=" . urlencode($$current_subject["id"]));
+			redirect_to("manage_content.php?subject=" . urlencode($$current_subject["id"]));
 		}else{
 			//Failure
 			$_SESSION["message"] = "Page creation failed";
