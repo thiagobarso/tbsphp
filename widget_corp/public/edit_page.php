@@ -7,7 +7,7 @@
 
 <?php 
 	//Can't add a new page unless we have a subject as a parent!
-	if(!$current_subject){
+	if(!$current_page){
 		//subject ID was missing or invalid or
 		//subject couldn't be found in database
 		redirect_to("manage_content.php");
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
 		if($result){
 			// Sucess
 			$_SESSION["message"] = "Page updated.";
-			redirect_to("manage_conten.php?subject=" . urlencode($$current_subject["id"]));
+			redirect_to("manage_content.php?subject=" . urlencode($$current_subject["id"]));
 		}else{
 			//Failure
 			$_SESSION["message"] = "Page creation failed";
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
 		<?php echo form_errors($errors); ?>
 		
 		<h2>Edit Page: <?php echo htmlentities($current_page["menu_name"]); ?></h2>
-		<form action="edit_page.php?subject=<?php echo urlencode($current_page["id"]); ?>" method="post">
+		<form action="edit_page.php?page=<?php echo urlencode($current_page["id"]); ?>" method="post">
 		<p>Menu name:
 				<input type="text" name="menu_name" value="<?php echo htmlentities($current_page["menu_name"]); ?>" />
 			</p>
@@ -103,8 +103,9 @@ if(isset($_POST['submit'])){
 			<input type="submit" name="submit" value="Edit Page"/>
 		</form>
 		<br />
-		<a href="manage_content.php?subject=<?php echo urlencode($current_subject["id"]);?>">Cancel</a>
-		</form>
+		<a href="manage_content.php?subject=<?php echo urlencode($current_page["subject_id"]);?>">Cancel</a>
+		&nbsp;&nbsp;
+		<a href="delete_page.php?page=<?php echo urlencode($current_page["id"]);?>" onclick="return confirm ('Are you sure?');">Delete page</a>
 	</div>
 </div>
 

@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 	$required_fields = array("menu_name","position","visible", "content");
 	validate_presences($required_fields);
 	$fields_with_max_lenghts = array("menu_name" => 30);
-	validate_max_lengths($fields_with_max_lengths);
+	validate_max_lengths($fields_with_max_lenghts);
 	
 	if(empty($errors)){
 		//Perform Create
@@ -96,7 +96,6 @@ if(isset($_POST['submit'])){
 		</form>
 		<br />
 		<a href="manage_content.php?subject=<?php echo urlencode($current_subject["id"]);?>">Cancel</a>
-		</form>
 	</div>
 </div>
 
